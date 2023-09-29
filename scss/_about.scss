@@ -1,0 +1,27 @@
+@use 'mixins';
+
+.about{
+    .container{
+        @include mixins.flex (center, space-between, row);
+        .about-text{
+            max-width: 600px;
+            text-align: left;
+            margin-right: 20px;
+            p{
+                border-left: 4px solid #b30000;
+                padding:10px 0 10px 10px;
+            }
+        }
+        img{
+            width: 450px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px #a1a1a1;
+        }
+        @include mixins.responsive(900px){
+            flex-direction: column-reverse;
+            img{
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@use 'mixins';
+
+#pizzas{
+    .container{
+        @include mixins.flex(center, space-evenly, row);
+        flex-wrap: wrap;
+        .pizza{
+            @include mixins.flex(center, center, column);
+            width: 300px;
+            margin-bottom: 3rem;
+            img{
+                width: 200px;
+                margin-bottom: 1.2rem;
+                transition: all .4s;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+            h3{
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                color: #e0ca00;
+                position: relative;
+                padding-bottom: 10px;
+                font-weight: 500;
+                &::before{
+                    content: "";
+                    background-color: #b30000;
+                    height: 5px;
+                    width: 4rem;
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}

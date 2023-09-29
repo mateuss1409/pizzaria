@@ -1,0 +1,41 @@
+@use 'mixins';
+
+main{
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: calc(100vh - 100px);
+    margin-top: 100px;
+    .container{
+        @include mixins.flex (center, center, column);
+        text-align: center;
+        height: 100%;
+        h1{
+            line-height: 1.12;
+            font-size: 5rem;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        p{
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 400;
+            font-family: 'Gloria Hallelujah', cursive;
+            font-size: 2rem;
+        }
+        @include mixins.responsive (1000px){
+            h1{
+                font-size: 4rem;
+            }
+        }
+        @include mixins.responsive (800px){
+            h1{
+                font-size: 3rem;
+            }
+            p{
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
